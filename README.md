@@ -1,9 +1,9 @@
 # Blog
 Website powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-## Purpose
+## Creating blog posts
 The purpose of this website is to act as a static website containing blog articles I write in the common time. 
-New blogs can be added simply by creating a new `.svx` blog file
+New blogs can be added simply by creating a new `.md` blog file in the `/src/posts` directory.
 
 ## Developing
 
