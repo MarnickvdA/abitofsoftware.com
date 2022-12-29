@@ -1,7 +1,7 @@
 import type {Metadata} from "../models/metadata";
-import type {BlogPost} from "../models/blog-post";
+import type {Post} from "../models/post";
 
-export async function fetchMarkdownPosts(): Promise<BlogPost[]> {
+export async function fetchMarkdownPosts(): Promise<Post[]> {
     const allPostFiles = import.meta.glob('/src/posts/*.md')
     const iterablePostFiles = Object.entries(allPostFiles)
 
