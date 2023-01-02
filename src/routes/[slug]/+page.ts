@@ -1,17 +1,17 @@
-export async function load({params}: { params: { slug: string } }) {
-    try {
-        const post = await import(`../../posts/${params.slug}.md`)
-        const {title, date} = post.metadata
-        const content = post.default
+import type {Post} from "$lib/models/post";
+import { redirect } from '@sveltejs/kit';
 
+export async function load({params}: { params: { slug: string } }): Promise<Post> {
+    try {
+        const data = await import(`../../posts/${params.slug}.md`)
         return {
-            content,
-            title,
-            date,
+            metadata: {
+                ...data.metadata,
+                path: params.slug
+            },
+            content: data.default
         }
     } catch (e) {
-        return {
-            // Show error page.
-        }
+        throw redirect(302, '/')
     }
 }
