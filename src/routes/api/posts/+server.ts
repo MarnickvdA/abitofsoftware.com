@@ -1,12 +1,8 @@
-import {fetchMarkdownPosts} from '$lib/utils'
+import {fetchPostItems} from '$lib/utils'
 import {json} from '@sveltejs/kit'
 
 export const GET = async () => {
-    const allPosts = await fetchMarkdownPosts()
+    const allPosts = await fetchPostItems()
 
-    const sortedPosts = allPosts.sort((a, b) => {
-        return new Date(b.metadata.date).getDate() - new Date(a.metadata.date).getDate()
-    })
-
-    return json(sortedPosts)
+    return json(allPosts)
 }

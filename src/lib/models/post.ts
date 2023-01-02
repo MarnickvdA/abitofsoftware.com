@@ -1,6 +1,6 @@
 import type {Metadata} from "./metadata";
 
-export interface BlogPost {
-    path: string
+export interface Post {
     metadata: Metadata
+    content?: unknown
 }

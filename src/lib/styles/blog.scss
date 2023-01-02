@@ -1,0 +1,33 @@
+h1, h2, h3, h4, h5, h6 {
+  @apply pb-2;
+}
+
+h1 {
+  @apply mt-6 text-3xl font-semibold;
+}
+
+h2 {
+  @apply mt-6 text-2xl font-semibold;
+}
+
+h3 {
+  @apply mt-4 text-xl font-semibold;
+}
+
+a {
+  @apply text-sky-500 font-semibold dark:text-sky-400;
+}
+
+code {
+  @apply text-sm text-slate-600 bg-stone-200 rounded pl-1.5 pr-1.5 pt-0.5 pb-0.5;
+}
+
+pre[class*=language-] {
+  @apply rounded-lg;
+}
+
+code[class*=language-] {
+  @apply text-sm;
+}
+
+@import "prism.css";
